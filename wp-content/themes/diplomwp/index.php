@@ -1,60 +1,13 @@
 <?php get_header(); ?>
 
     <div class="main-wrapper">
-        <div class="top-menu-wrapper hidden-xs hidden-sm">
-            <div class="container">
-                <div class="relative">
-                    <div class="top-menu">
-                        <ul>
-                            <li class="active"><a href="#"><span>О компании</span></a>
-                                <ul>
-                                    <li><a href="#">Информация о компании</a></li>
-                                    <li><a href="#">Миссия</a></li>
-                                    <li><a href="#">Ценности</a></li>
-                                    <li><a href="#">Документы и правовая база</a></li>
-                                    <li><a href="#">Участие в ассоциациях</a></li>
-                                    <li><a href="#">Новости</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#"><span>Клиентам</span></a>
-                                <ul>
-                                    <li><a href="#">Способы погашения</a></li>
-                                    <li><a href="#">Сообщить о погашении</a></li>
-                                    <li><a href="#">Если у вас задолженность</a></li>
-                                    <li><a href="#">Советы и рекомендации</a></li>
-                                    <li><a href="#">Часто задаваемые вопросы</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#"><span>Партнерам</span></a>
-                                <ul>
-                                    <li><a href="#">Наши партнеры</a></li>
-                                    <li><a href="#">Тендеры</a></li>
-                                    <li><a href="#">Рекомендационные письма</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#"><span>Карьера</span></a>
-                                <ul>
-                                    <li><a href="#">Почему стоит работать в «Финколлект»</a></li>
-                                    <li><a href="#">Вакансии</a></li>
-                                    <li><a href="#">Контакты менеджеров по персоналу</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#"><span>Контакты</span></a></li>
-                        </ul>
-                        <div class="cleaner"></div>
-                    </div>
-                    <a href="#" class="lk-btn">Личный кабинет</a>
-                </div>
-            </div>
-        </div>
         <div class="header-slider white">
             <div class="table">
                 <div class="table-cell">
                     <div class="container">
-                        <div class="title">Финколлект</div>
+                        <div class="title"><?php the_field("main_title"); ?></div>
                         <p>
-                            Уважение к нашим партнерам, их заемщикам и нашим сотрудникам – <br />
-                            залог благоприятного и долгосрочного сотрудничества.
+                            <?php the_field("main_text"); ?>
                         </p>
                         <a href="#" class="button min dark-btn">Подробнее</a>
                     </div>
@@ -67,69 +20,37 @@
                 <div class="title-h2"><span class="red">С кем мы</span> работаем</div>
                 <div class="push10"></div>
                 <div class="partners-carousel">
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="img-wrapper">
-                                    <img src="images/partner1.jpg" />
+                    
+                <?php 
+                
+                    $args = array(
+                        "numberposts" => 3,
+                        "post_type" => "partners",
+                        "suppress_filters" => true,
+                    );
+                    $posts = get_posts($args);
+                    foreach($posts as $post) : ?>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="img-wrapper">
+                                        <!-- <img src="<?php the_field("partners_img");?>" /> -->
+                                        <?php the_post_thumbnail("partners_thumb"); ?>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="element-content">
-                                    <div class="push30 hidden-md"></div>
-                                    <div class="title f24">Быстроденьги</div>
-                                    <div class="push5"></div>
-                                    <div class="text">
-                                        «Быстроденьги» – крупная федеральная компания на рынке микрофинансирования с разветвленной сетью 
-                                        офисов финансовой помощи по всей стране. Это первая организация в России, предложившая населению 
-                                        услугу «займы до зарплаты» — небольшие суммы денег в долг на короткий срок. 
+                                <div class="col-md-6">
+                                    <div class="element-content">
+                                        <div class="push30 hidden-md"></div>
+                                        <div class="title f24"><?php the_title(); ?></div>
+                                        <div class="push5"></div>
+                                        <div class="text">
+                                            <?php the_excerpt(); ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="img-wrapper">
-                                    <img src="images/partner1.jpg" />
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="element-content">
-                                    <div class="push30 hidden-md"></div>
-                                    <div class="title f24">Быстроденьги</div>
-                                    <div class="push5"></div>
-                                    <div class="text">
-                                        «Быстроденьги» – крупная федеральная компания на рынке микрофинансирования с разветвленной сетью 
-                                        офисов финансовой помощи по всей стране. Это первая организация в России, предложившая населению 
-                                        услугу «займы до зарплаты» — небольшие суммы денег в долг на короткий срок. 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="img-wrapper">
-                                    <img src="images/partner1.jpg" />
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="element-content">
-                                    <div class="push30 hidden-md"></div>
-                                    <div class="title f24">Быстроденьги</div>
-                                    <div class="push5"></div>
-                                    <div class="text">
-                                        «Быстроденьги» – крупная федеральная компания на рынке микрофинансирования с разветвленной сетью 
-                                        офисов финансовой помощи по всей стране. Это первая организация в России, предложившая населению 
-                                        услугу «займы до зарплаты» — небольшие суммы денег в долг на короткий срок. 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
                 <div class="push100"></div>
             </div>

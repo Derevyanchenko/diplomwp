@@ -5,7 +5,11 @@
                 <div class="col-sm-6 col-md-7 col-lg-6">
                     <div class="copyright">
                         © 2016 ООО «Финколлект». <br class="hidden-md hidden-lg">Все права защищены.
-                        <div class="footer-logo"><a href="/"><img src="images/footer-logo.png" alt="logo" /></a></div>
+                        <div class="footer-logo">
+                            <a href="<?php the_permalink() ?>">
+                                <?php the_custom_logo(); ?>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-5 col-lg-4 col-lg-offset-2 hidden-xs">

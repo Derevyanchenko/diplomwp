@@ -22,14 +22,13 @@
             <div class="container">
                 <div class="header relative">
                     <div class="logo">
-                        <a href="/">
-                            <img src="images/logo-xs.png" alt="logo" class="visible-xs visible-sm" />
-                            <img src="images/logo.png" alt="logo" class="hidden-xs hidden-sm" />
+                        <a href="<?php the_permalink() ?>">
+                            <?php the_custom_logo(); ?>
                         </a>
                     </div>
                     <a href="#callback" class="button invert min callback-btn fancyboxModal hidden-xs hidden-sm">Обратный звонок</a>
                     <div class="header-tel hidden-xs hidden-sm">
-                        <div>8 (800) 700-77-46</div>
+                        <div><?php echo get_field('header_number', 'theme-general-settings'); ?></div>
                         <small>Звонок по РФ бесплатный </small>
                     </div>
                     <div class="mob-menu-btn visible-xs visible-sm">
@@ -42,8 +41,9 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="dropdown-tel">
-                                        <div>8 (800) 700-77-46</div>
+                                        <div></div>
                                         <small>Звонок по РФ бесплатный </small>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -57,15 +57,33 @@
                             <a href="#" class="lk-btn"><span></span> Личный кабинет</a>
                         </div>
                         <div class="mobile-menu">
-                            <ul>
-                                <li class="active"><a href="#">О компании</a></li>
-                                <li><a href="#">Клиентам</a></li>
-                                <li><a href="#">Партнерам</a></li>
-                                <li><a href="#">Карьера</a></li>
-                                <li><a href="#">Контакты</a></li>
-                            </ul>
+                            <?php
+                              wp_nav_menu(array(
+                                "theme_location" => "top",
+                                "container" => ""
+                             )); 
+                            ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+         <div class="top-menu-wrapper hidden-xs hidden-sm">
+            <div class="container">
+                <div class="relative">
+                    <div class="top-menu">
+                         <?php
+                              wp_nav_menu(array(
+                                "theme_location" => "top",
+                                "container" => ""
+                             )); 
+                            ?>
+                        <div class="cleaner"></div>
+                    </div>
+                    <a href="#" class="lk-btn">Личный кабинет</a>
+                </div>
+            </div>
+        </div>
+
+       
