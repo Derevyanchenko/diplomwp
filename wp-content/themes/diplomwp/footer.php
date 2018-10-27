@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-sm-6 col-md-7 col-lg-6">
                     <div class="copyright">
-                        © 2016 ООО «Финколлект». <br class="hidden-md hidden-lg">Все права защищены.
+                        <?=get_field('footer_copy', 'theme-general-settings'); ?>
                         <div class="footer-logo">
                             <a href="<?php the_permalink() ?>">
                                 <?php the_custom_logo(); ?>
@@ -16,7 +16,7 @@
                     <div class="push5"></div>
                     <div class="footer-tel relative">
                         <div class="push3"></div>
-                        <div>8 (800) 700-77-46</div>
+                        <div><?=get_field('footer_number', 'theme-general-settings') ?></div>
                         <small>Звонок по РФ бесплатный </small>
                         <a href="#callback" class="button invert min callback-btn fancyboxModal">Обратный звонок</a>
                     </div>

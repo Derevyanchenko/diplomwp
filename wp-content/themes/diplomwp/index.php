@@ -64,7 +64,9 @@
                 </p>
                 <form class="rf">
                     <div class="row">
-                        <div class="col-sm-4">
+
+                    <?php echo do_shortcode('[contact-form-7 id="71" title="Оплатить займ"]'); ?>
+                        <!-- <div class="col-sm-4">
                             <div class="form-group">
                                 <input type="text" class="form-control required" placeholder="Номер договора" />
                             </div>
@@ -76,7 +78,7 @@
                         </div>
                         <div class="col-sm-4">
                             <input type="submit" class="button btn block" value="Оплатить" />
-                        </div>
+                        </div> -->
                     </div>
                 </form>
             </div>
@@ -88,48 +90,36 @@
                 <div class="title-h2">Новости</div>
                 <div class="push5"></div>
                 <div class="row">
+
+                <?php   
+                    $args = array(
+                        'numberposts' => 3,
+                        'post_type' => 'post',
+                        'supprress_filters' => true,
+                    );
+                    $posts = get_posts($args);
+                    foreach($posts as $post) {
+                        setup_postdata($post);
+                    ?>
+
                     <div class="col-md-4">
                         <div class="element relative">
                             <div class="date">
-                                <div>04</div>
-                                <small>апреля</small>
+                                <div><?php the_time('F jS'); ?></div>
                             </div>
                             <div class="text">
-                                <a href="#">
-                                    Запустила продажу сертификатов
-                                    на оказание юридических услуг
+                                <a href="<?php the_permalink(); ?>">
+                                   <?php the_title(); ?>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="element relative">
-                            <div class="date">
-                                <div>04</div>
-                                <small>апреля</small>
-                            </div>
-                            <div class="text">
-                                <a href="#">
-                                    Запустила продажу сертификатов
-                                    на оказание юридических услуг
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="element relative">
-                            <div class="date">
-                                <div>04</div>
-                                <small>апреля</small>
-                            </div>
-                            <div class="text">
-                                <a href="#">
-                                    Запустила продажу сертификатов
-                                    на оказание юридических услуг
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    <?php 
+                        }
+                        wp_reset_postdata();
+                    ?>
+                    
                 </div>
             </div>
             <div class="push40"></div>

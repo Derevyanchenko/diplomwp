@@ -932,7 +932,7 @@ img.right{
 }
 .news .element{
     margin-bottom: 20px;
-    padding-left: 70px;
+    padding-left: 112px;
     min-height: 60px;
 }
 .news .element .date{
@@ -942,7 +942,7 @@ img.right{
     text-align: center;
 }
 .news .element .date div{
-    font-size: 48px;
+    /* font-size: 48px; */
     font-weight: 100;
     color: #E32924;
     line-height: 1;
@@ -952,7 +952,7 @@ img.right{
     display: block;
 }
 .news .element .text{
-    padding-top: 10px;
+    padding-top: 0px;
 }
 .news .element .text a{
     text-decoration: underline;
@@ -1921,7 +1921,7 @@ ul.tabs li.current{
 }
 .copyright .footer-logo{
     left: inherit;
-    right: 40px;
+    right: 0px;
 }
 .worth .element .text{
     font-size: 14px;
