@@ -465,3 +465,6 @@
 
 }
 
+.header-slider p {
+  max-width: 600px;
+}

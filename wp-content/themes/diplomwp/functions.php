@@ -9,6 +9,7 @@ add_action( 'after_setup_theme', 'theme_register_nav_menu' );
 function theme_register_nav_menu() {
 	register_nav_menu( 'top', 'Меню в шапке' );
 	add_theme_support('post-thumbnails', array("partners"));
+	add_theme_support('title-tag');
 	// add_image_size('partners_thumb', 540, 300, true);
 }
 
