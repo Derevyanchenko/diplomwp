@@ -1,119 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Финколлект</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="SKYPE_TOOLBAR" content ="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!--
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="apple-touch-icon-precomposed" href="apple-touch-favicon.png"/>
-    -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:600,400,300,400italic,600,700,700italic,800&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <link href="css/jquery.fancybox.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-</head>
-<body>
+<?php 
+/*
+    Template Name: Клиентам    
+*/
+?>
+
+<?php get_header(); ?> 
+
+
     <div class="main-wrapper">
-        <div class="header-wrapper">
-            <div class="container">
-                <div class="header relative">
-                    <div class="logo">
-                        <a href="/">
-                            <img src="images/logo-xs.png" alt="logo" class="visible-xs visible-sm" />
-                            <img src="images/logo.png" alt="logo" class="hidden-xs hidden-sm" />
-                        </a>
-                    </div>
-                    <a href="#callback" class="button invert min callback-btn fancyboxModal hidden-xs hidden-sm">Обратный звонок</a>
-                    <div class="header-tel hidden-xs hidden-sm">
-                        <div>8 (800) 700-77-46</div>
-                        <small>Звонок по РФ бесплатный </small>
-                    </div>
-                    <div class="mob-menu-btn visible-xs visible-sm">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <div class="dropdown text-center">
-                        <div class="dropdown-head">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="dropdown-tel">
-                                        <div>8 (800) 700-77-46</div>
-                                        <small>Звонок по РФ бесплатный </small>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="dropdown-callback">
-                                        <a href="#callback" class="button invert min callback-btn fancyboxModal">Обратный звонок</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dropdown-lk">
-                            <a href="#" class="lk-btn"><span></span> Личный кабинет</a>
-                        </div>
-                        <div class="mobile-menu">
-                            <ul>
-                                <li class="active"><a href="#">О компании</a></li>
-                                <li><a href="#">Клиентам</a></li>
-                                <li><a href="#">Партнерам</a></li>
-                                <li><a href="#">Карьера</a></li>
-                                <li><a href="#">Контакты</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="top-menu-wrapper hidden-xs hidden-sm">
-            <div class="container">
-                <div class="relative">
-                    <div class="top-menu">
-                        <ul>
-                            <li class="active"><a href="#"><span>О компании</span></a>
-                                <ul>
-                                    <li><a href="#">Информация о компании</a></li>
-                                    <li><a href="#">Миссия</a></li>
-                                    <li><a href="#">Ценности</a></li>
-                                    <li><a href="#">Документы и правовая база</a></li>
-                                    <li><a href="#">Участие в ассоциациях</a></li>
-                                    <li><a href="#">Новости</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#"><span>Клиентам</span></a>
-                                <ul>
-                                    <li><a href="#">Способы погашения</a></li>
-                                    <li><a href="#">Сообщить о погашении</a></li>
-                                    <li><a href="#">Если у вас задолженность</a></li>
-                                    <li><a href="#">Советы и рекомендации</a></li>
-                                    <li><a href="#">Часто задаваемые вопросы</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#"><span>Партнерам</span></a>
-                                <ul>
-                                    <li><a href="#">Наши партнеры</a></li>
-                                    <li><a href="#">Тендеры</a></li>
-                                    <li><a href="#">Рекомендационные письма</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#"><span>Карьера</span></a>
-                                <ul>
-                                    <li><a href="#">Почему стоит работать в «Финколлект»</a></li>
-                                    <li><a href="#">Вакансии</a></li>
-                                    <li><a href="#">Контакты менеджеров по персоналу</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#"><span>Контакты</span></a></li>
-                        </ul>
-                        <div class="cleaner"></div>
-                    </div>
-                    <a href="#" class="lk-btn">Личный кабинет</a>
-                </div>
-            </div>
-        </div>
         <div class="clients-wrapper">
             <div class="push35"></div>
             <div class="container">
@@ -136,7 +30,9 @@
                     <div class="push10 visible-md visible-lg"></div>
                     <div class="box visible">
                         <div class="container">
-                            <p>Вы можете оплатить вашу задолженность онлайн и уточнить о поступлении денежных средств по номеру горячей линии.</p>
+                            <p>
+                                <?php the_field("onlineMethods_text"); ?>
+                            </p>
                         </div>
                         <div class="gray-bg">
                             <div class="push40"></div>
@@ -167,89 +63,57 @@
                             <div class="terminal-pay">
                                 <div class="steps">
                                     <div class="row">
+
+                                    <?php $methods = get_field("methods"); ?>
+                                    <?php foreach($methods as $method): ?>
+
                                         <div class="col-sm-4">
                                             <div class="element el1 relative">
-                                                <img src="images/icon4.png" />
-                                                1. На главной странице терминала
-                                                найдите кнопку «Быстроденьги»
+                                                <img src="<?php echo $method["methods_img"]; ?>" />
+                                                <?php echo $method["methods_title"]; ?>
                                             </div>
                                         </div>
-                                        <div class="col-sm-4">
-                                            <div class="element el2 relative">
-                                                <img src="images/icon5.png" />
-                                                2. Введите данные для оплаты
-                                                договора: номер договора
-                                                и дату рождения заёмщика
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="element el3 relative">
-                                                <img src="images/icon6.png" />
-                                                <div class="push7"></div>
-                                                3. Следуйте инструкциям терминала
-                                            </div>
-                                        </div>
+                                    
+                                    <?php endforeach; ?>                                       
+
                                     </div>
                                 </div>
                             </div>
                             <div class="push20"></div>
                             <div class="terminal-carousel">
-                                <div class="item text-center">
-                                    <div class="item-inner relative">
-                                        <a href="#" class="absolute"></a>
-                                        <div class="img-wrapper">
-                                            <img src="images/terminal1.png" />
-                                        </div>
-                                        <div class="push20"></div>
-                                        <div class="text">
-                                            <a href="#">QIWI</a> — это универсальный платежный сервис, который
-                                            включает в себя крупнейшую в мире сеть терминалов, 
-                                            а также веб-версию и мобильное приложение.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item text-center">
-                                    <div class="item-inner relative">
-                                        <a href="#" class="absolute"></a>
-                                        <div class="img-wrapper">
-                                            <img src="images/terminal2.png" />
-                                        </div>
-                                        <div class="push20"></div>
-                                        <div class="text">
-                                            <a href="#">Pay.Travel</a>   — платежный cервис, который принимает
-                                            платежи в 75 регионах России и продолжает
-                                            подключать новые регионы.</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item text-center">
-                                    <div class="item-inner relative">
-                                        <a href="#" class="absolute"></a>
-                                        <div class="img-wrapper">
-                                            <img src="images/terminal1.png" />
-                                        </div>
-                                        <div class="push20"></div>
-                                        <div class="text">
-                                            <a href="#">QIWI</a> — это универсальный платежный сервис, который
-                                            включает в себя крупнейшую в мире сеть терминалов, 
-                                            а также веб-версию и мобильное приложение.
+
+                                <?php  
+
+                                    $args = array(
+                                        'numberposts' => 3,
+                                        'post_type' => 'instruction',
+                                        'suppress_filters' => true,
+                                    );
+                                    $posts = get_posts($args);
+
+                                    foreach($posts as $post) {
+                                        setup_postdata($post);
+                                    ?>
+
+                                    <div class="item text-center">
+                                        <div class="item-inner relative">
+                                            <a href="<?php the_permalink(); ?>" class="absolute"></a>
+                                            <div class="img-wrapper">
+                                                <?php the_post_thumbnail(); ?>
+                                            </div>
+                                            <div class="push20"></div>
+                                            <div class="text">
+                                                <?php the_content(); ?>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="item text-center">
-                                    <div class="item-inner relative">
-                                        <a href="#" class="absolute"></a>
-                                        <div class="img-wrapper">
-                                            <img src="images/terminal2.png" />
-                                        </div>
-                                        <div class="push20"></div>
-                                        <div class="text">
-                                            <a href="#">Pay.Travel</a>   — платежный cервис, который принимает
-                                            платежи в 75 регионах России и продолжает
-                                            подключать новые регионы.</a>
-                                        </div>
-                                    </div>
-                                </div>
+                
+                                    <?php
+                                    }
+                                    wp_reset_postdata();
+                                ?>
+
+                                
                             </div>
                             <div class="push100"></div>
                         </div>
@@ -259,27 +123,19 @@
                             <div class="bank-pay">
                                 <div class="steps">
                                     <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="element el1 relative">
-                                                <img src="images/icon7.png" style="top: 0;" />
-                                                1. Выбрать любой банк и способ
-                                                оплаты безналичным платежом
+
+                                        <?php $bankMethods = get_field("bankMethods"); ?>
+                                        <?php foreach($bankMethods as $bankMethod): ?>
+
+                                             <div class="col-sm-4">
+                                                <div class="element el1 relative">
+                                                    <img src="<?php echo $bankMethod["bankMethods_img"]; ?>" style="top: 0;" />
+                                                    <?php echo $bankMethod["bankMethods_title"]; ?>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="element el2 relative">
-                                                <img src="images/icon8.png" style="left: 0px;" />
-                                                2. Перечислить сумму
-                                                задолженности <a href="#requisites" class="fancyboxModal decoration">по реквизитам</a>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="element el3 relative">
-                                                <img src="images/icon9.png" />
-                                                <div class="push7"></div>
-                                                3. Сохранить платежный документ
-                                            </div>
-                                        </div>
+                                        
+                                        <?php endforeach; ?>    
+
                                     </div>
                                 </div>
                             </div>
@@ -609,80 +465,4 @@
         <div class="footer-push"></div>
     </div>
 
-    <div class="footer-wrapper">
-        <div class="container">
-            <div class="push25"></div>
-            <div class="row">
-                <div class="col-sm-6 col-md-7 col-lg-6">
-                    <div class="copyright">
-                        © 2016 ООО «Финколлект». <br class="hidden-md hidden-lg">Все права защищены.
-                        <div class="footer-logo"><a href="/"><img src="images/footer-logo.png" alt="logo" /></a></div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-5 col-lg-4 col-lg-offset-2 hidden-xs">
-                    <div class="push5"></div>
-                    <div class="footer-tel relative">
-                        <div class="push3"></div>
-                        <div>8 (800) 700-77-46</div>
-                        <small>Звонок по РФ бесплатный </small>
-                        <a href="#callback" class="button invert min callback-btn fancyboxModal">Обратный звонок</a>
-                    </div>
-                </div>
-            </div>
-            <div class="push15"></div>
-        </div>
-    </div>
-    <div class="modal" id="callback">
-        <div class="title-h2"><span class="red">перезвонить</span> мне</div>
-        <p>
-            Оставьте телефон и мы перезвоним вам бесплатно
-            в удобное время.
-        </p>
-        <form class="rf">
-            <div class="form-group">
-                <input type="text" class="form-control required" placeholder="Имя" />
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control required tel" placeholder="Телефон" />
-            </div>
-            <input type="submit" class="button btn block" value="позвоните мне" />
-        </form>
-    </div>
-    <div class="modal" id="requisites">
-        <div class="for-print">
-            <div class="title-h2"><span class="red">Наши </span>Реквизиты</div>
-            <p>
-                МФО Турбозайм (ООО)<br />
-                123290, г. Москва, тупик Магистральный 1-й,<br />
-                д. 11, стр.10<br />
-                ИНН 7702820127<br />
-                КПП 771401001<br />
-                ОГРН 1137746702367<br />
-                р/с 40701810910310004455<br />
-                в Филиале 6318 ВТБ 24 (ПАО) В РКЦ Самара<br />
-                к/с 30101810700000000955<br />
-                БИК 043602955
-            </p>
-        </div>
-        <div class="row">
-            <div class="col-xs-6">
-                <a href="#" class="button block">Скачать</a>
-            </div>
-            <div class="col-xs-6">
-                <a href="#" class="button block printBtn">Распечатать</a>
-            </div>
-        </div>
-    </div>
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/modernizr.js"></script>
-    <script src="js/jquery.fancybox.js"></script>
-    <script src="js/slick.min.js"></script>
-    <script src="js/jquery.maskedinput.js"></script>
-    <script src="js/plugins-scroll.js"></script>
-    <script src="js/onReady.js"></script>
-</body>
-</html>
+<?php get_footer(); ?>

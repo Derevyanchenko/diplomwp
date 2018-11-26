@@ -34,18 +34,19 @@ Template Name: About
                 <div class="title-h2"><span class="red">наши</span> достижения</div>
                 <div class="push10"></div>
                 <div class="icons-list achievements">
+
+                <?php $progress_items = get_field("progress"); ?>
+
+                <?php foreach($progress_items as $progress): ?>
+
                     <div class="element relative">
-                        <img src="<?php the_field("progress_img_1"); ?>" />
-                        <p><?php the_field("progress_text_1"); ?></p>
+                        <img src="<?php echo $progress["progress_img"]; ?>" />
+                        <p><?php echo $progress["progress_text"]; ?></p>
                     </div>
-                    <div class="element relative">
-                        <img src="<?php the_field("progress_img_2"); ?>" />
-                        <p><?php the_field("progress_text_2"); ?></p>
-                    </div>
-                    <div class="element relative">
-                        <img src="<?php the_field("progress_img_3"); ?>" />
-                        <p><?php the_field("progress_text_3"); ?></p>
-                    </div>
+
+                <?php endforeach; ?>
+
+                    
                 </div>
             </div>
             <div class="push25"></div>
@@ -56,48 +57,28 @@ Template Name: About
                 <div class="title-h2"><span class="red">наши</span> ценности</div>
                 <div class="push10"></div>
                 <div class="flex row">
+
+                    <?php $values = get_field("values"); ?>
+
+                    <?php foreach($values as $value): ?>
+
                     <div class="col-sm-4">
                         <div class="element">
                             <div class="img-wrapper">
-                                <img src="<?php the_field("values_img_1"); ?>" />
+                                <img src="<?php echo $value["values_img"]; ?>" />
                             </div>
                             <div class="element-content">
-                                <div class="title weight600 f18"><?php the_field("values_title_1"); ?></div>
+                                <div class="title weight600 f18"><?php echo $value["values_title"]; ?></div>
                                 <div class="push5"></div>
                                 <div class="text">
-                                    <?php the_field("values_text_1"); ?>
+                                    <?php echo $value["values_text"]; ?>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="element">
-                            <div class="img-wrapper">
-                                <img src="<?php the_field("values_img_2"); ?>" />
-                            </div>
-                            <div class="element-content">
-                                <div class="title weight600 f18"><?php the_field("values_title_2"); ?></div>
-                                <div class="push5"></div>
-                                <div class="text">
-                                    <?php the_field("values_text_2"); ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="element">
-                            <div class="img-wrapper">
-                                <img src="<?php the_field("values_img_3"); ?>" />
-                            </div>
-                            <div class="element-content">
-                                <div class="title weight600 f18"><?php the_field("values_title_3"); ?></div>
-                                <div class="push5"></div>
-                                <div class="text">
-                                    <?php the_field("values_text_3"); ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                <?php endforeach; ?>
+
                 </div>
             </div>
             <div class="push20"></div>
@@ -108,45 +89,26 @@ Template Name: About
                 <div class="title-h2">Документы</div>
                 <div class="push15"></div>
                 <div class="row">
+
+                    <?php $documents = get_field('documents', 'theme-general-settings'); ?>
+
+                    <?php foreach ($documents as $document): ?>
+                        
                     <div class="col-md-4">
                         <div class="element relative">
-                            <a href="<?php the_field("document_href_1"); ?>" class="absolute"></a>
+                            <a href="<?php echo $document["documents_link"]; ?>" class="absolute"></a>
                             <div class="icon">
                                 <div><img src="<?php echo get_template_directory_uri() ?>/assets/images/pdf.png" /></div>
                             </div>
                             <div class="text">
-                                <a href="<?php the_field("document_href_1"); ?>">
-                                    <?php the_field("document_title_1"); ?>
+                                <a href="<?php echo $document["documents_link"]; ?>">
+                                    <?php echo $document["documents_text"]; ?>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="element relative">
-                            <a href="<?php the_field("document_href_2"); ?>" class="absolute"></a>
-                            <div class="icon">
-                            <div><img src="<?php echo get_template_directory_uri() ?>/assets/images/pdf.png" /></div>
-                            </div>
-                            <div class="text">
-                                <a href="<?php the_field("document_href_2"); ?>">
-                                <?php the_field("document_title_2"); ?>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="element relative">
-                            <a href="<?php the_field("document_href_3"); ?>" class="absolute"></a>
-                            <div class="icon">
-                            <div><img src="<?php echo get_template_directory_uri() ?>/assets/images/pdf.png" /></div>
-                            </div>
-                            <div class="text">
-                                <a href="<?php the_field("document_href_3"); ?>">
-                                <?php the_field("document_title_3"); ?>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+
+                    <?php endforeach; ?>
                 </div>
             </div>
             <div class="push30"></div>

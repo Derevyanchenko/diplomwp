@@ -22,37 +22,33 @@
                 <div class="title-h2"><span class="red">С кем мы</span> работаем</div>
                 <div class="push10"></div>
                 <div class="partners-carousel">
-                    
-                <?php 
-                
-                    $args = array(
-                        "numberposts" => 3,
-                        "post_type" => "partners",
-                        "suppress_filters" => true,
-                    );
-                    $posts = get_posts($args);
-                    foreach($posts as $post) : ?>
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="img-wrapper">
-                                        <!-- <img src="<?php the_field("partners_img");?>" /> -->
-                                        <?php the_post_thumbnail("partners_thumb"); ?>
-                                    </div>
+
+                <?php $partners = get_field("partners"); ?>
+
+                <?php foreach($partners as $partner): ?>
+
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="img-wrapper">
+                                    <img src="<?php echo $partner["partners_img"]; ?>" /> 
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="element-content">
-                                        <div class="push30 hidden-md"></div>
-                                        <div class="title f24"><?php the_title(); ?></div>
-                                        <div class="push5"></div>
-                                        <div class="text">
-                                            <?php the_excerpt(); ?>
-                                        </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="element-content">
+                                    <div class="push30 hidden-md"></div>
+                                    <div class="title f24"><?php echo $partner["partners_title"]; ?></div>
+                                    <div class="push5"></div>
+                                    <div class="text">
+                                        <?php echo $partner["partners_text"]; ?>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach; ?>
+                    </div>
+
+                <?php endforeach; ?>
+                    
                 </div>
                 <div class="push100"></div>
             </div>

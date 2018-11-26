@@ -1,5 +1,8 @@
 <?php  
 
+global $fpid;
+$fpid = get_option('page_on_front');
+
 add_action('wp_enqueue_scripts', 'theme_styles');
 add_action('wp_enqueue_scripts', 'theme_scripts');
 
@@ -8,14 +11,47 @@ add_theme_support("custom-logo");
 add_action( 'after_setup_theme', 'theme_register_nav_menu' );
 function theme_register_nav_menu() {
 	register_nav_menu( 'top', 'Меню в шапке' );
-	add_theme_support('partners-thumbnails', array("partners"));
 	add_theme_support('title-tag');
 	add_theme_support('post-thumbnails', array('post'));
+	add_theme_support('post-thumbnails', array('post', 'instruction'));
 	// add_image_size('partners_thumb', 540, 300, true);
 }
 
 function theme_settings_init(){
     register_setting( 'theme_settings', 'theme_settings' );
+}
+
+add_action('init', 'my_custom_init');
+function my_custom_init(){
+	register_post_type('instruction', array(
+		'labels'             => array(
+			'name'               => 'Инструкции Оплат', // Основное название типа записи
+			'singular_name'      => 'Инструкция оплаты', // отдельное название записи типа Book
+			'add_new'            => 'Добавить новую инструкцию',
+			'add_new_item'       => 'Добавить новую инструкцию',
+			'edit_item'          => 'Редактировать инструкцию',
+			'new_item'           => 'Новая инструкция',
+			'view_item'          => 'Посмотреть инструкцию',
+			'search_items'       => 'Найти инструкцию',
+			'not_found'          =>  'Инструкций не найдено',
+			'not_found_in_trash' => 'В корзине книг не найдено',
+			'parent_item_colon'  => '',
+			'menu_name'          => 'Инструкции оплат'
+
+		  ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => true,
+		'rest-base'			 => null,
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => 4,
+		'supports'           => array('title', 'thumbnail', 'editor')
+	) );
 }
 
 
@@ -45,37 +81,6 @@ function my_acf_init() {
 	
 }
 
-add_action('init', 'my_custom_init');
-function my_custom_init(){
-	register_post_type('partners', array(
-		'labels'             => array(
-			'name'               => 'Партнеры', // Основное название типа записи
-			'singular_name'      => 'Партнеры', // отдельное название записи типа Book
-			'add_new'            => 'Добавить новых',
-			'add_new_item'       => 'Добавить новых партнеров',
-			'edit_item'          => 'Редактировать партнеров',
-			'new_item'           => 'Новая партнер',
-			'view_item'          => 'Посмотреть партнеров',
-			'search_items'       => 'Найти партнеров',
-			'not_found'          =>  'партнеров не найдено',
-			'not_found_in_trash' => 'В корзине партнеров не найдено',
-			'parent_item_colon'  => '',
-			'menu_name'          => 'партнеры'
-
-		  ),
-		'public'             => true,
-		'publicly_queryable' => true,
-		'show_ui'            => true,
-		'show_in_menu'       => true,
-		'query_var'          => true,
-		'rewrite'            => true,
-		'capability_type'    => 'post',
-		'has_archive'        => true,
-		'hierarchical'       => false,
-		'menu_position'      => null,
-		'supports'           => array('title','thumbnail','excerpt')
-	) );
-}
 
 //Добавление действий
 add_action( 'admin_init', 'theme_settings_init' );

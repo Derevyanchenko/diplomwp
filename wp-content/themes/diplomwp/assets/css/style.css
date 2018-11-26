@@ -1957,3 +1957,6 @@ ul.tabs li.current{
 body > #print_frame{display:none;}
       
 
+.content {
+    margin-top: 0;
+}
